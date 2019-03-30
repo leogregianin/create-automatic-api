@@ -7,12 +7,12 @@ virtualenv venv -p C:\Python36\python.exe
 .\venv\Scripts\activate
 ```
 
-* Install packages
+* Install packages:
 ```bash
 pip3 install django djangorestframework drf-generators
 ```
 
-* Auto generate requirements.txt 
+* Auto generate requirements.txt:
 ```bash
 $ pip3 freeze > requirements.txt
 ```
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-* Create sqlite3 database
+* Create sqlite3 database:
 ```bash
 python .\manage.py migrate
 ```
@@ -64,12 +64,12 @@ CREATE TABLE category (
 );
 ```
 
-* Generate django models
+* Generate django models:
 ```bash
 python .\manage.py inspectdb bill category > .\bills\models.py
 ```
 
-* Register classes in admin.py
+* Register class in admin.py:
 ```python
 from django.contrib import admin
 from django.apps import apps
@@ -107,12 +107,12 @@ REST_FRAMEWORK = {
 }
 ```
 
-* Run server
+* Run server:
 ```bash
 python .\manage.py runserver
 ```
 
-* Usage
+* Usage:
 GET http://127.0.0.1:8000/bills/1
 
 JSON Result: 
