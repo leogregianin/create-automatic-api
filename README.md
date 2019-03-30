@@ -14,7 +14,7 @@ pip3 install django djangorestframework drf-generators
 
 * Auto generate requirements.txt:
 ```bash
-$ pip3 freeze > requirements.txt
+pip3 freeze > requirements.txt
 ```
 
 * Create Django project:
