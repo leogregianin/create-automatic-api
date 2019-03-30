@@ -113,16 +113,16 @@ python .\manage.py runserver
 ```
 
 * Usage:
-GET http://127.0.0.1:8000/bills/1
+  * GET http://127.0.0.1:8000/bills/1
 
-JSON Result: 
-```
-{"id":1,"name":"Comida","date":"2019-03-30T13:54:11Z","price":"9.87","comment":"Almoço","ident_category":1}
-```
+  * JSON Result: 
+    ```
+    {"id":1,"name":"Comida","date":"2019-03-30T13:54:11Z","price":"9.87","comment":"Almoço","ident_category":1}
+    ```
 
-GET http://127.0.0.1:8000/category/?format=json
+  * GET http://127.0.0.1:8000/category/?format=json
 
-JSON Result: 
-```
-{"count":2,"next":null,"previous":null,"results":[{"id":1,"name":"Despesa","operation":0},{"id":2,"name":"Receita","operation":1}]}
-```
+  * JSON Result: 
+    ```
+    {"count":2,"next":null,"previous":null,"results":[{"id":1,"name":"Despesa","operation":0},{"id":2,"name":"Receita","operation":1}]}
+    ```
