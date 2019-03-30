@@ -2,21 +2,29 @@
 Generating API automatically with Django
 
 * Create virtual environment:
-$ virtualenv venv -p C:\Python36\python.exe
-$ .\venv\Scripts\activate
+```bash
+virtualenv venv -p C:\Python36\python.exe
+.\venv\Scripts\activate
+```
 
 * Install packages
+```bash
 pip3 install django djangorestframework drf-generators
+```
 
 * Auto generate requirements.txt 
+```bash
 $ pip3 freeze > requirements.txt
+```
 
 * Create Django project:
+```bash
 django-admin startproject config .
 python .\manage.py startapp bills
+```
 
 * Include new apps in settings.py:
-```
+```python
 INSTALLED_APPS = [
  ‘django.contrib.admin’,
  ‘django.contrib.auth’,
@@ -31,7 +39,9 @@ INSTALLED_APPS = [
 ```
 
 * Create sqlite3 database
+```bash
 python .\manage.py migrate
+```
 
 * Sqlite3 database schema:
 ```sql
@@ -55,10 +65,12 @@ CREATE TABLE category (
 ```
 
 * Generate django models
+```bash
 python .\manage.py inspectdb bill category > .\bills\models.py
+```
 
 * Register classes in admin.py
-```
+```python
 from django.contrib import admin
 from django.apps import apps
 
@@ -69,14 +81,18 @@ for model_name, model in app.models.items():
 ```
 
 * Create superuser:
-$ python .\manage.py createsuperuser
+```
+python .\manage.py createsuperuser
+```
 
 * Create migrations and apply:
+```bash
 python .\manage.py makemigrations
 python .\manage.py migrate
+```
 
 * Fix config/urls.py:
-```
+```python
 urlpatterns = [
   path(‘admin/’, admin.site.urls),
   path(‘’, include(bills.urls’)),
@@ -84,7 +100,7 @@ urlpatterns = [
 ```
 
 * Define Pagination in settings.py:
-```
+```python
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 15
@@ -92,7 +108,9 @@ REST_FRAMEWORK = {
 ```
 
 * Run server
+```bash
 python .\manage.py runserver
+```
 
 * Usage
 GET http://127.0.0.1:8000/bills/1
