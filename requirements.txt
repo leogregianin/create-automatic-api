@@ -1,4 +1,4 @@
-﻿Django==2.1.9
+﻿Django==2.2.10
 djangorestframework==3.9.2
 drf-generators==0.4.0
 pytz==2018.9
